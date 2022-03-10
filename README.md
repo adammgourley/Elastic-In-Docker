@@ -13,4 +13,9 @@
 ```
     sudo ./logstash-compose-script.sh
 ```
-#### 6) Done!
+#### 6) That's it! You're all set. You can confirm they're running with this command.
+```
+    docker ps
+```
+
+### \#\#\# Note for Windows users \#\#\#
