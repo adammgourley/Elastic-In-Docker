@@ -5,7 +5,7 @@
 ```
     docker-compose -f elastic-kibana-compose.yml
 ```
-#### 4) Change the permissions on <strong>logstash-compose-script.sh</strong> file.
+#### 4) Change the permissions on 'logstash-compose-script.sh' file.
 ```
     chmod +x logstash-compose-script.sh
 ```
