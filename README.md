@@ -1,6 +1,6 @@
 # Spin up Elasticsearch, Logstash, and Kibana ( 8.1.0 ) with Docker
 #### 1) Pull the files to your Ubuntu 20.04 server instance.
-#### 2) "cd" into the newly downloaded folder.
+#### 2) Open the folder in your command line.
 #### 3) Run the following command.
 ```
     docker-compose -f elastic-kibana-compose.yml
