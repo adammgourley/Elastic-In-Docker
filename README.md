@@ -18,4 +18,12 @@
     docker ps
 ```
 
-### \#\#\# Note for Windows users \#\#\#
+### --- Note for Windows users ---
+Instead of running the bash script, run the following command to bring up Logstash.
+```
+    docker-compose -f logstash-compose-config.yml -d
+```
+If you receive a permissions error, you'll need to adjust the permissions of the "certs" folder in Logstash's container /usr/share/logstash/config/certs to read/write for the logstash user. To do that, change the permissions of the volume on the host container. To find the volume location, run this command.
+```
+    docker volume inspect elastic_certs
+```
