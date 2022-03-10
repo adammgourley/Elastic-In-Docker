@@ -18,7 +18,9 @@
     docker ps
 ```
 
-### --- Note for Windows users ---
+<br>
+
+### Note for Windows users
 Instead of running the bash script, run the following command to bring up Logstash.
 ```
     docker-compose -f logstash-compose-config.yml -d
