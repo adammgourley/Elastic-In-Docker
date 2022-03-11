@@ -2,7 +2,7 @@
 #### 1) Pull this repository or download and extract it.
 #### 2) Open the folder in your command line.
 #### 3) Change the elastic and kibana user passwords in the ".env" file.
-#### 4) Run the following command.
+#### 4) Run the following command. It could take up to 5 minutes to complete.
 ```
 docker-compose up -d
 ```
