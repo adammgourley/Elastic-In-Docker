@@ -15,5 +15,5 @@ docker ps
 ### Important Note
 This sets up one instance of Kibana, 3 instances of Elasticsearch and one instance of Logstash. In this compose file, Logstash is started without any pipeline files. You will need to add those later on and reboot the container. To copy your ".conf" pipeline files over, use this command while the container is running and then restart it.
 ```
-docker cp pipeline/*.conf elastic_logstash_1:/usr/share/logstash/pipeline
+docker cp /path/to/pipeline/*.conf elastic_logstash_1:/usr/share/logstash/pipeline
 ```
