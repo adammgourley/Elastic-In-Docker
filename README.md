@@ -23,8 +23,9 @@ docker ps
 ```
 <br>
 
-### Important Note
+### Important Notes
 This sets up one instance of Kibana, 3 instances of Elasticsearch and one instance of Logstash. In this compose file, Logstash is started without any pipeline files. You will need to add those later on and reboot the container. To copy your ".conf" pipeline files over, use this command while the container is running and then restart it.
 ```
 docker cp /path/to/pipeline/*.conf elastic_logstash_1:/usr/share/logstash/pipeline
 ```
+The docker-compose.yml also creates a self-signed certificate for a fleet-server in the elastic_certs volume. It's not used in the docker-compose.yml, but it may save you some time in the future.
