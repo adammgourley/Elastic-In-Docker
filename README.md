@@ -1,12 +1,23 @@
 # Spin up Elasticsearch, Logstash, and Kibana ( 8.1.0 ) with Docker
-#### 1) Pull this repository or download and extract it.
-#### 2) Open the folder in your command line.
-#### 3) Change the elastic and kibana user passwords in the ".env" file.
-#### 4) Run the following command. It could take up to 5 minutes to complete.
+#### 1) Set vm.max_map.count to 262144. Below are how to do that for Windows and Ubuntu.
+For Windows, open a command prompt and run the following commands.
+```
+>   wsl -d docker-desktop
+>   sysctl -w vm.max_map_count=262144
+```
+For Ubuntu (and most debian based distros), run this command. Add this to the file that you're opening in nano "vm.max_map_count=262144" (without quotes). Then run the second command.
+```
+>   sudo nano sysctl.conf
+>   sudo sysctl -p
+```
+#### 2) Pull this repository or download and extract it.
+#### 3) Open the folder in your command line.
+#### 4) Change the elastic and kibana user passwords in the ".env" file.
+#### 5) Run the following command. It could take up to 5 minutes to complete.
 ```
 docker-compose up -d
 ```
-#### 5) That's it! You're all set. You can confirm they're running with this command.
+#### 6) That's it! You're all set. You can confirm they're running with this command.
 ```
 docker ps
 ```
