@@ -5,7 +5,7 @@ For Windows, open a command prompt and run the following commands.
 >   wsl -d docker-desktop
 >   sysctl -w vm.max_map_count=262144
 ```
-For Ubuntu (and most debian based distros), run this command. Add this to the file that you're opening in nano "vm.max_map_count=262144" (without quotes). Then run the second command.
+For Ubuntu (and most debian based distros), run these commands. Add this to the file that you're opening in nano "vm.max_map_count=262144" (without quotes). Then run the second command.
 ```
 >   sudo nano sysctl.conf
 >   sudo sysctl -p
