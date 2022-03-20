@@ -28,4 +28,6 @@ This sets up one instance of Kibana, 3 instances of Elasticsearch and one instan
 ```
 docker cp /path/to/pipeline/*.conf elastic_logstash_1:/usr/share/logstash/pipeline
 ```
+<br>
+
 The docker-compose.yml also creates a self-signed certificate for a fleet-server in the elastic_certs volume. It's not used in the docker-compose.yml, but it may save you some time in the future.
