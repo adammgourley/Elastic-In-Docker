@@ -1,5 +1,5 @@
 # Spin up Elasticsearch, Logstash, and Kibana ( 8.1.0 ) with Docker
-#### 1) Set vm.max_map.count to 262144. Below are how to do that for Windows and Ubuntu.
+#### 1) Set vm.max_map.count to 262144.
 For Windows, open a command prompt and run the following commands.
 ```
 >   wsl -d docker-desktop
@@ -24,10 +24,15 @@ docker ps
 <br>
 
 ### Important Notes
-This sets up one instance of Kibana, 3 instances of Elasticsearch and one instance of Logstash. In this compose file, Logstash is started without any pipeline files. You will need to add those later on and reboot the container. To copy your ".conf" pipeline files over, use this command while the container is running and then restart it.
+1) This sets up one instance of Kibana, 3 instances of Elasticsearch and one instance of Logstash. In this compose file, Logstash is started without any pipeline files. You will need to add those later on and reboot the container. To copy your ".conf" pipeline files over, use this command while the container is running and then restart it.
 ```
 docker cp /path/to/pipeline/*.conf elastic_logstash_1:/usr/share/logstash/pipeline
 ```
+
 <br>
 
-The docker-compose.yml also creates a self-signed certificate for a fleet-server in the elastic_certs volume. It's not used in the docker-compose.yml, but it may save you some time in the future.
+2) The docker-compose.yml also creates a self-signed certificate for a fleet-server in the elastic_certs volume. It's not used in the docker-compose.yml, but it may save you some time in the future.
+
+<br>
+
+3) Logstash pipeline config files are stored in the elastic_pipeline volume. Any changes to that folder will require a reboot of the elastic_logstash_1 container for it to start the pipeline.
