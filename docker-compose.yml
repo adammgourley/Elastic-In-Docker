@@ -60,12 +60,6 @@ services:
           "      - localhost\n"\
           "    ip:\n"\
           "      - 127.0.0.1\n"\
-          "  - name: fleet-server\n"\
-          "    dns:\n"\
-          "      - fleet-server\n"\
-          "      - localhost\n"\
-          "    ip:\n"\
-          "      - 127.0.0.1\n"\
           > config/certs/instances.yml;
           bin/elasticsearch-certutil cert --silent --pem -out config/certs/certs.zip --in config/certs/instances.yml --ca-cert config/certs/ca/ca.crt --ca-key config/certs/ca/ca.key;
           unzip config/certs/certs.zip -d config/certs;
@@ -233,6 +227,7 @@ services:
       - ELASTICSEARCH_USERNAME=kibana_system
       - ELASTICSEARCH_PASSWORD=${KIBANA_PASSWORD}
       - ELASTICSEARCH_SSL_CERTIFICATEAUTHORITIES=config/certs/ca/ca.crt
+      - XPACK_SECURITY_AUTHC_API_KEY_ENABLED
     mem_limit: ${MEM_LIMIT}
     healthcheck:
       test:
@@ -251,6 +246,7 @@ services:
     user: root
     volumes:
       - certs:/usr/share/logstash/config/certs:rw
+      - pipeline:/usr/share/logstash/pipeline
     environment:
       - XPACK_MONITORING_ENABLED=true
       - XPACK_MONITORING_ELASTICSEARCH_USERNAME=elastic
@@ -269,4 +265,6 @@ volumes:
   esdata03:
     driver: local
   kibanadata:
+    driver: local
+  pipeline:
     driver: local
