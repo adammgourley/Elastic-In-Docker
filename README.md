@@ -31,8 +31,4 @@ docker cp /path/to/pipeline/*.conf elastic_logstash_1:/usr/share/logstash/pipeli
 
 <br>
 
-2) The docker-compose.yml also creates a self-signed certificate for a fleet-server in the elastic_certs volume. It's not used in the docker-compose.yml, but it may save you some time in the future.
-
-<br>
-
-3) Logstash pipeline config files are stored in the elastic_pipeline volume. Any changes to that folder will require a reboot of the elastic_logstash_1 container for it to start the pipeline.
+2) Logstash pipeline config files are stored in the elastic_pipeline volume. Any changes to that folder will require a reboot of the elastic_logstash_1 container for it to start the pipeline.
