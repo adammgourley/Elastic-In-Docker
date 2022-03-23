@@ -7,7 +7,7 @@ For Windows, open a command prompt and run the following commands.
 ```
 For Ubuntu (and most debian based distros), run these commands. Add this to the file that you're opening in nano "vm.max_map_count=262144" (without quotes). Then run the second command.
 ```
->   sudo nano sysctl.conf
+>   sudo nano /etc/sysctl.conf
 >   sudo sysctl -p
 ```
 #### 2) Pull this repository or download and extract it.
